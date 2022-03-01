@@ -16,7 +16,7 @@ def pegar_cotacoes():  # Função que vai dar ação para algo, tipo ao clicar o
     Euro: {cotacao_euro}
     BTC: {cotacao_btc}'''
 
-    texto_cotacao["Text"] = texto
+    print(texto)
 
 
 
