@@ -23,11 +23,6 @@ def inserir_produto():  # Criar a função
     descricao = entry_descricao.get()  # Pega as informações que eu inseri
     tipo = combobox_selecionar.get()
     quantidade = entry_quantidade.get()
-    # data_criacao = dt.datetime.now()  # Ao cadastrar vai salvar a hora e o dia que foi criado
-    # data_criacao = data_criacao.strftime('%d/%m/%y %H:%M')  # COnverti para mostrar num formato em dia mes e ano e hora
-    # codigo = len(lista_produto) + 1  # Cria a lista de codigo
-    # codigo_srt = "Cod-{}".format(codigo)  # Formata
-    # lista_produto.append((codigo_srt, descricao, tipo, quantidade, data_criacao))  # Criação de uma tupla imutavel
     cur.execute("INSERT INTO estoque(descricao, tipo_unidade, quantidade) VALUES (%s, %s, %s);", (descricao, tipo, quantidade))
     conn.commit()
 
