@@ -1,5 +1,4 @@
 import tkinter as tk
-
 import psycopg2
 
 janela = tk.Tk()
@@ -11,9 +10,9 @@ except:
     print("I am unable to connect to the database")
 cur = conn.cursor()
 
-def criar():
-    cur.execute('''CREATE TABLE usuario (id serial PRIMARY KEY, nome char, telefone varchar, cpf varchar);''')
-    conn.commit()
+
+# cur.execute('''CREATE TABLE usuario (id serial PRIMARY KEY, nome char, telefone varchar, cpf varchar);''')
+# conn.commit()
 
 
 def inserir_usuario():  # Criar a função
@@ -30,6 +29,10 @@ label_nome.grid(column=0, row=1, padx=10, pady=10, sticky='nswe', columnspan=2)
 
 entry_nome = tk.Entry()
 entry_nome.grid(column=2, row=1, padx=10, pady=10, sticky='nswe', columnspan=2)
+if entry_nome > 11:
+    print('Digite o número novamente')
+else:
+    print('Cadastrado')
 
 label_telefone = tk.Label(text='Telefone Usuário')
 label_telefone.grid(column=0, row=2, padx=10, pady=10, sticky='nswe', columnspan=2)
